@@ -26,7 +26,7 @@ export const cartCount =(state: Array<{id?:number;
       {
         id: idt++,
         description: action.payload.description,
-        z:action.payload.z? +2: "no z",
+        gdgdgd:action.payload.z? +2: "no z",
       }
     ]
   case actions.CART_DELETED:

@@ -1,13 +1,12 @@
 import React from "react";
 
-
-function Cart() {
+function Menu() {
     return (
         <>
-
+      
         </>
     )
   }
   
-  export default Cart;
+  export default Menu;
   
