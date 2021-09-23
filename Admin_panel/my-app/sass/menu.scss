@@ -1,0 +1,33 @@
+body{
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
+
+.menu{
+    margin-top:0;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    border-bottom:1px solid lightgray;
+    text-align: center;
+    align-items: center;
+}
+.menu--list{
+    gap:15px;
+    margin-top:0;
+    margin-bottom:0;
+    height:4rem;
+    flex-basis:33%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    font-size:1.5rem;
+    align-items: center; 
+}
+.menu--logo{
+    flex-basis:33%;
+}
+.menu--cart{
+    flex-basis:33%;
+}
