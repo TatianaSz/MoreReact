@@ -56,7 +56,20 @@ body {
 }
 
 .menu--cart {
+  position: relative;
   flex-basis: 33%;
+  font-size: 1.5rem;
+}
+
+.menu--cart__counter {
+  position: absolute;
+  background: lightseagreen;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  top: -25%;
 }
 
 /*# sourceMappingURL=style.css.map */

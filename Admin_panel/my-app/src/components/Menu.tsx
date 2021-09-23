@@ -1,7 +1,12 @@
 import React from "react";
+import {useSelector} from "react-redux"
+import {State} from "./../state/cartReducer"
 import {HiOutlineShoppingCart} from "react-icons/hi"
+import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
 
 function Menu() {
+    const count = useSelector((state: State)=>state.length -1);
+    console.log(count)
     return (
         <div className="menu">
       <ul className="menu--list">
@@ -15,6 +20,7 @@ function Menu() {
       </div>
       <div className="menu--cart">
             <HiOutlineShoppingCart/>
+            <div className="menu--cart__counter">{count}</div>
       </div>
         </div>
     )

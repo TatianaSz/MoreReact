@@ -19,6 +19,7 @@ const {addToCard, deleteFromCart } = bindActionCreators(ActionCreators, dispatch
   return (
     <div className="App">
       <Menu />
+      <button onClick={()=>addToCard("hi",1)}>check</button>
       <Background/>
       <ShoeContainer>
         <Shoe/>
