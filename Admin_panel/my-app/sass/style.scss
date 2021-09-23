@@ -1,0 +1,9 @@
+.menu--list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+.background{
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
