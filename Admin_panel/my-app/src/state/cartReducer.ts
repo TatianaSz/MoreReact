@@ -6,15 +6,19 @@ interface ACTIONS{
     payload:{
       id?:number;
       description:string;
+      z?:number | string;
     }
   }
   
   
-  let idt =0;
-  
+  let idt =1;
+  let init = [{
+    id:0,
+    description:""
+  }];
 //reducer
 export const cartCount =(state: Array<{id?:number;
-    description:string;}> = [], action:ACTIONS) =>{
+    description:string;}> = init, action:ACTIONS) =>{
   switch(action.type){
   case actions.CART_ADDED:
     return [
@@ -22,6 +26,7 @@ export const cartCount =(state: Array<{id?:number;
       {
         id: idt++,
         description: action.payload.description,
+        z:action.payload.z? +2: "no z",
       }
     ]
   case actions.CART_DELETED:
@@ -31,4 +36,4 @@ export const cartCount =(state: Array<{id?:number;
   }
   
   }
-  
+  export type State = ReturnType<typeof cartCount>
