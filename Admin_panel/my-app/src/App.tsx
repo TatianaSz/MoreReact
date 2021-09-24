@@ -9,27 +9,27 @@ import Background from './components/Background';
 import Shoe from './components/Shoe';
 import ShoeContainer from './components/ShoeContainer';
 import Cart from "./components/Cart";
+import StoreData from "./storeData"
 
 function App() {
   const state = useSelector((state: State)=>state);
   const dispatch = useDispatch();
 const {addToCard, deleteFromCart } = bindActionCreators(ActionCreators, dispatch);
 
-
   return (
     <div className="App">
       <Menu />
       <Background/>
       <ShoeContainer>
-        <Shoe/>
-        <Shoe/>
-        <Shoe/>
-        <Shoe/>
-        <Shoe/>
-        <Shoe/>
-        <Shoe/>
-        <Shoe/>
-        <Shoe/>
+        <Shoe image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={""} />
+        <Shoe image={StoreData.green.image} price={1} currency={"$"} description={""}/>
+        <Shoe image={StoreData.purple.image} price={1} currency={"$"} description={""}/>
+        <Shoe image={StoreData.red.image} price={1} currency={"$"} description={""}/>
+        <Shoe image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={""}/>
+        <Shoe image={StoreData.green.image} price={1} currency={"$"} description={""}/>
+        <Shoe image={StoreData.purple.image} price={1} currency={"$"} description={""}/>
+        <Shoe image={StoreData.red.image} price={1} currency={"$"} description={""}/>
+        <Shoe image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={""}/>
       </ShoeContainer>
       <Cart />
     </div>
