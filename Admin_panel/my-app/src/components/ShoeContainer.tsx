@@ -7,7 +7,7 @@ interface Props {
 function ShoeContainer(props: Props) {
     return (
         <div className="container">
-       
+          {props.children}
         </div>
     )
   }

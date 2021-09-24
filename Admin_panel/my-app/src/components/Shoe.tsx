@@ -14,7 +14,9 @@ interface ISHOE{
 function Shoe() {
     return (
         <div className="shoe">
-       
+       <div className="shoe--image"><img src={""} alt="shoe"/></div>
+       <div className="shoe--desc"></div>  {/* description here */}
+       <div className="price"></div>  {/*price and currency here */}
         </div>
     )
   }

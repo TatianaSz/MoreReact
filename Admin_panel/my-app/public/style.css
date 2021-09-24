@@ -109,4 +109,23 @@ body {
   top: -25%;
 }
 
+.menu--item {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.shoe {
+  flex-basis: 30%;
+  background: red;
+  height: 100px;
+}
+
 /*# sourceMappingURL=style.css.map */
