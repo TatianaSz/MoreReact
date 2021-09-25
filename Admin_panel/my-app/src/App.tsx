@@ -22,15 +22,19 @@ const {addToCard, deleteFromCart } = bindActionCreators(ActionCreators, dispatch
 
 function pageView(e:any){
 //console.log(e.target.getAttribute('class'))
-if(e.target.getAttribute('class').includes("option")){
+let clickOption = e.target.getAttribute('class')
+if(clickOption.includes("option")){
   setMenu(1)
+}
+else if(e.target.getAttribute('id')){
+  setMenu(parseInt(e.target.getAttribute('id')))
 }
 }
 
 
   return (
     <div className="App">
-      <Menu />
+      <Menu onClick={pageView}/>
       <Background menu={menu}/>
       <ShoeContainer>
         <Shoe onClick={pageView} image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={StoreData.blue.description} />
