@@ -1,5 +1,17 @@
 .shoe{
     flex-basis: 30%;
-    background:red;
+    text-align: center;
 
+}
+.shoe:hover .shoe--image{
+    opacity: 0.85;
+}
+.shoe--desc{
+    border-bottom: 1px solid transparent;
+}
+.shoe:hover .shoe--desc{
+    border-bottom: 1px solid black;
+}
+.price{
+    margin-top:0.5rem;
 }

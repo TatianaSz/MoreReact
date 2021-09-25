@@ -3,7 +3,13 @@ import shoe1 from "../images/shoe1.jpg"
 import shoe2 from "../images/shoe2.jpg"
 import shoe3 from "../images/shoe3.jpg"
 
-function Background() {
+interface VIS{
+    menu:number;
+}
+
+
+function Background(props:VIS) {
+    if(props.menu == 0){
     return (
         <div className="background">
         <div className="background--block__back"></div>
@@ -14,6 +20,10 @@ function Background() {
         
         </div>
     )
+    }
+    else{
+        return null
+    }
   }
   
   export default Background;
