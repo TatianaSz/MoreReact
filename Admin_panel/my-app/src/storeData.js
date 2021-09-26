@@ -8,6 +8,7 @@ export default {
     "blue":
         {
             "image":ShoeBlu,
+            "gender":"male",
             "price": 100,
             "currency": "$",
             "color": "blue",
@@ -17,6 +18,7 @@ export default {
         "green":
         {
             "image":ShoeGreen,
+            "gender":"male",
             "price": 120,
             "currency": "$",
             "color": "blue",
@@ -26,6 +28,7 @@ export default {
         "purple":
         {
             "image":ShoePurple,
+            "gender":"female",
             "price": 90,
             "currency": "$",
             "color": "blue",
@@ -35,6 +38,7 @@ export default {
         "red":
         {
             "image":ShoeRed,
+            "gender":"female",
             "price": 100,
             "currency": "$",
             "color": "blue",

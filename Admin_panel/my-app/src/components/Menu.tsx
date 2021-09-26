@@ -10,7 +10,7 @@ interface MENU{
 
 function Menu(props:MENU) {
     const count = useSelector((state: State)=>state.length -1);
-    console.log(count)
+  //  console.log(count)
     return (
         <div className="menu">
       <ul className="menu--list">

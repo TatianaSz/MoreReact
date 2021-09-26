@@ -21,14 +21,15 @@ const {addToCard, deleteFromCart } = bindActionCreators(ActionCreators, dispatch
 
 
 function pageView(e:any){
-//console.log(e.target.getAttribute('class'))
 let clickOption = e.target.getAttribute('class')
 if(clickOption.includes("option")){
-  setMenu(1)
+  setMenu(e.target.dataset.id)
 }
 else if(e.target.getAttribute('id')){
   setMenu(parseInt(e.target.getAttribute('id')))
 }
+console.log(e.target.dataset.id)
+
 }
 
 
@@ -36,16 +37,16 @@ else if(e.target.getAttribute('id')){
     <div className="App">
       <Menu onClick={pageView}/>
       <Background menu={menu}/>
-      <ShoeContainer>
-        <Shoe onClick={pageView} image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={StoreData.blue.description} />
-        <Shoe image={StoreData.green.image} price={StoreData.green.price} currency={"$"} description={StoreData.green.description}/>
-        <Shoe image={StoreData.purple.image} price={StoreData.purple.price} currency={"$"} description={StoreData.purple.description}/>
-        <Shoe image={StoreData.red.image} price={StoreData.red.price} currency={"$"} description={StoreData.red.description}/>
-        <Shoe image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={StoreData.blue.description}/>
-        <Shoe image={StoreData.green.image} price={StoreData.green.price} currency={"$"} description={StoreData.green.description}/>
-        <Shoe image={StoreData.purple.image} price={StoreData.purple.price} currency={"$"} description={StoreData.purple.description}/>
-        <Shoe image={StoreData.red.image} price={StoreData.red.price} currency={"$"} description={StoreData.red.description}/>
-        <Shoe image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={StoreData.blue.description}/>
+      <ShoeContainer menu={menu}>
+        <Shoe menu={menu} onClick={pageView} id={10} image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={StoreData.blue.description} />
+        <Shoe menu={menu} onClick={pageView} id={11} image={StoreData.green.image} price={StoreData.green.price} currency={"$"} description={StoreData.green.description}/>
+        <Shoe menu={menu} onClick={pageView} id={12} image={StoreData.purple.image} price={StoreData.purple.price} currency={"$"} description={StoreData.purple.description}/>
+        <Shoe menu={menu} onClick={pageView} id={13} image={StoreData.red.image} price={StoreData.red.price} currency={"$"} description={StoreData.red.description}/>
+        <Shoe menu={menu} onClick={pageView} id={14} image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={StoreData.blue.description}/>
+        <Shoe menu={menu} onClick={pageView} id={15} image={StoreData.green.image} price={StoreData.green.price} currency={"$"} description={StoreData.green.description}/>
+        <Shoe menu={menu} onClick={pageView} id={16} image={StoreData.purple.image} price={StoreData.purple.price} currency={"$"} description={StoreData.purple.description}/>
+        <Shoe menu={menu} onClick={pageView} id={17} image={StoreData.red.image} price={StoreData.red.price} currency={"$"} description={StoreData.red.description}/>
+        <Shoe menu={menu} onClick={pageView} id={18} image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={StoreData.blue.description}/>
       </ShoeContainer>
       <Cart />
     </div>

@@ -122,6 +122,10 @@ body {
   justify-content: center;
 }
 
+.container--block {
+  display: block;
+}
+
 .shoe {
   flex-basis: 30%;
   text-align: center;
@@ -141,6 +145,10 @@ body {
 
 .price {
   margin-top: 0.5rem;
+}
+
+.shoe--add {
+  margin-top: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
