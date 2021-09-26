@@ -11,6 +11,9 @@ import Shoe from './components/Shoe';
 import ShoeContainer from './components/ShoeContainer';
 import Cart from "./components/Cart";
 import StoreData from "./storeData";
+import Contact from './components/Contact';
+import Men from './components/Men';
+import Women from './components/Women';
 
 function App() {
 const [menu, setMenu] = useState(0);
@@ -38,16 +41,19 @@ console.log(e.target.dataset.id)
       <Menu onClick={pageView}/>
       <Background menu={menu}/>
       <ShoeContainer menu={menu}>
-        <Shoe menu={menu} onClick={pageView} id={10} image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={StoreData.blue.description} />
-        <Shoe menu={menu} onClick={pageView} id={11} image={StoreData.green.image} price={StoreData.green.price} currency={"$"} description={StoreData.green.description}/>
-        <Shoe menu={menu} onClick={pageView} id={12} image={StoreData.purple.image} price={StoreData.purple.price} currency={"$"} description={StoreData.purple.description}/>
-        <Shoe menu={menu} onClick={pageView} id={13} image={StoreData.red.image} price={StoreData.red.price} currency={"$"} description={StoreData.red.description}/>
-        <Shoe menu={menu} onClick={pageView} id={14} image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={StoreData.blue.description}/>
-        <Shoe menu={menu} onClick={pageView} id={15} image={StoreData.green.image} price={StoreData.green.price} currency={"$"} description={StoreData.green.description}/>
-        <Shoe menu={menu} onClick={pageView} id={16} image={StoreData.purple.image} price={StoreData.purple.price} currency={"$"} description={StoreData.purple.description}/>
-        <Shoe menu={menu} onClick={pageView} id={17} image={StoreData.red.image} price={StoreData.red.price} currency={"$"} description={StoreData.red.description}/>
-        <Shoe menu={menu} onClick={pageView} id={18} image={StoreData.blue.image} price={StoreData.blue.price} currency={"$"} description={StoreData.blue.description}/>
+        <Shoe menu={menu} onClick={pageView} id={10} prop={StoreData.blue}/>
+        <Shoe menu={menu} onClick={pageView} id={11} prop={StoreData.green}/>
+        <Shoe menu={menu} onClick={pageView} id={12} prop={StoreData.purple}/>
+        <Shoe menu={menu} onClick={pageView} id={13} prop={StoreData.red}/>
+        <Shoe menu={menu} onClick={pageView} id={14} prop={StoreData.blue}/>
+        <Shoe menu={menu} onClick={pageView} id={15} prop={StoreData.green}/>
+        <Shoe menu={menu} onClick={pageView} id={16} prop={StoreData.purple}/>
+        <Shoe menu={menu} onClick={pageView} id={17} prop={StoreData.red}/>
+        <Shoe menu={menu} onClick={pageView} id={18} prop={StoreData.blue}/>
       </ShoeContainer>
+      <Contact />
+      <Women />
+      <Men />
       <Cart />
     </div>
   );
