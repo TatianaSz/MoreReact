@@ -1,4 +1,5 @@
 import React from "react";
+import {useForm} from "react-hook-form"
 
 interface ISHOE{
     prop:{image: string;
@@ -29,10 +30,22 @@ function Shoe(props:ISHOE){
     else if(props.menu==props.id){
         return (
             <div className="shoe--add">
-                 <div className="" data-id={props.id}><img src={props.prop.image} alt="shoe" /></div>
-                 <div>
-                 <div className="shoe--desc ">{props.prop.description}</div>  
-                 <div className="price ">{props.prop.price} {props.prop.currency}</div>  
+                <div className="" data-id={props.id}><img src={props.prop.image} alt="shoe" /></div>
+                <div>
+                <div className="shoe--desc ">{props.prop.description}</div>  
+                <div className="price ">{props.prop.price} {props.prop.currency}</div>  
+                <form>
+
+                <label>Size:
+                <select name="size" id="size">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                </select> 
+                </label>
+
+                </form>
                  </div>
             </div>
         )

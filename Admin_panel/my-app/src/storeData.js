@@ -7,13 +7,13 @@ import ShoeRed from './images/shoered.png'
 export default {
     "blue":
         {
-            image:ShoeBlu,
-            gender:"male",
-            price: 100,
-            currency: "$",
-            color: "blue",
-            description: "Sneakers Sky",
-            sizes: [37, true, 2, 38, true, 3, 39, false, 0, 40, true, 3],
+            "image":ShoeBlu,
+            "gender":"male",
+            "price": 100,
+            "currency": "$",
+            "color": "blue",
+            "description": "Sneakers Sky",
+            "sizes": [37, true, 2, 38, true, 3, 39, false, 0, 40, true, 3],
         },
         "green":
         {

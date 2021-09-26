@@ -35,13 +35,13 @@ console.log(e.target.dataset.id)
 
 }
 
-
+{/* id is passed as normal prop since i have repetetive placeholder "products" */}
   return (
     <div className="App">
       <Menu onClick={pageView}/>
       <Background menu={menu}/>
       <ShoeContainer menu={menu}>
-        <Shoe menu={menu} onClick={pageView} id={10} prop={StoreData.blue}/>
+        <Shoe menu={menu} onClick={pageView} id={10} prop={StoreData.blue}/> 
         <Shoe menu={menu} onClick={pageView} id={11} prop={StoreData.green}/>
         <Shoe menu={menu} onClick={pageView} id={12} prop={StoreData.purple}/>
         <Shoe menu={menu} onClick={pageView} id={13} prop={StoreData.red}/>
