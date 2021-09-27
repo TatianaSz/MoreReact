@@ -18,10 +18,10 @@ import Women from './components/Women';
 function App() {
 const [menu, setMenu] = useState(0);
 
-  const state = useSelector((state: State)=>state);
+ const state = useSelector((state: State)=>state);
   const dispatch = useDispatch();
 const {addToCard, deleteFromCart } = bindActionCreators(ActionCreators, dispatch);
-
+console.log(state)
 
 function pageView(e:any){
 let clickOption = e.target.getAttribute('class')
@@ -33,7 +33,7 @@ else if(e.target.getAttribute('id')){
 }
 }
 
-{/* id is passed as normal prop since i have repetetive placeholder "products" */}
+//id is passed as normal prop since i have repetetive placeholder "products" 
   return (
     <div className="App">
       <Menu onClick={pageView}/>

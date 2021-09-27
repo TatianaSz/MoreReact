@@ -9,7 +9,7 @@ interface VIS{
 
 
 function Background(props:VIS) {
-    if(props.menu == 0){
+    if(props.menu === 0){
     return (
         <div className="background">
         <div className="background--block__back"></div>

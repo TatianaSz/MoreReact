@@ -3,6 +3,8 @@ import {useForm} from "react-hook-form"
 import { useDispatch } from 'react-redux';
 import {bindActionCreators} from "redux";
 import {ActionCreators} from "../state"
+import {useSelector} from "react-redux";
+import {State} from "./../state/cartReducer";
 
 interface ISHOE{
     prop:{image: string;
@@ -28,10 +30,13 @@ type Values ={
     size: string;
 }
 
+
 function Shoe(props:ISHOE){
-    const {register, watch, handleSubmit} = useForm<Values>();
+    const {register,  handleSubmit} = useForm<Values>();
     const dispatch = useDispatch();
     const {addToCard} = bindActionCreators(ActionCreators, dispatch);
+    const state = useSelector((state: State)=>state[state.length-1][props.prop.color]);
+
      if(props.menu==0){
     return (
         <div className="shoe option" data-id={props.id} onClick={props.onClick}>
@@ -42,14 +47,14 @@ function Shoe(props:ISHOE){
     )
     }
     else if(props.menu==props.id){
-      
+       
         return (
             <div className="shoe--add">
                 <div className="" data-id={props.id}><img src={props.prop.image} alt="shoe" /></div>
                 <div>
                 <div className="shoe--desc ">{props.prop.description}</div>  
                 <div className="price ">{props.prop.price} {props.prop.currency}</div>  
-                <form onSubmit={handleSubmit((data)=>{console.log(data); addToCard(props.prop.description)})}>
+                <form onSubmit={handleSubmit((data)=>{let size= data.size as keyof typeof props.prop.sizes;  addToCard(props.prop.description, props.prop.color, data.size, state[size]-1)})}>
 
                 <label>Size:
                 <select {...register("size")} id="size">
@@ -59,6 +64,7 @@ function Shoe(props:ISHOE){
                 <option disabled={props.prop.sizes["40"]===0} value="40">{props.prop.sizes["40"]!==0?`40  in stock: ${props.prop.sizes["40"]}`: "40 sold out" }</option>
                 </select> 
                 </label>
+                <br/>
                 <input type="submit" value="Add to cart"/>
                 </form>
                  </div>

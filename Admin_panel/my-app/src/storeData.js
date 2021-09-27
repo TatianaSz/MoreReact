@@ -4,7 +4,7 @@ import ShoePurple from './images/shoepurple.png'
 import ShoeRed from './images/shoered.png'
 
 
-export default {
+export default{
     "blue":
         {
             "image":ShoeBlu,
@@ -27,7 +27,7 @@ export default {
             "gender":"male",
             "price": 120,
             "currency": "$",
-            "color": "blue",
+            "color": "green",
             "description": "Sneakers Fresh Walk",
             "sizes": {
                 "37": 0,
@@ -42,7 +42,7 @@ export default {
             "gender":"female",
             "price": 90,
             "currency": "$",
-            "color": "blue",
+            "color": "purple",
             "description": "Sneakers Sour Fig",
             "sizes": {
                 "37": 0,
@@ -57,7 +57,7 @@ export default {
             "gender":"female",
             "price": 100,
             "currency": "$",
-            "color": "blue",
+            "color": "red",
             "description": "Sneakers Bloody Apple",
             "sizes": {
                 "37": 10,

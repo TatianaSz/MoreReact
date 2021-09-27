@@ -2,7 +2,7 @@ import React from "react";
 import {useSelector} from "react-redux"
 import {State} from "./../state/cartReducer"
 import {HiOutlineShoppingCart} from "react-icons/hi"
-import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
+
 
 interface MENU{
     onClick?: (e:any)=>void;
