@@ -13,7 +13,13 @@ export default {
             "currency": "$",
             "color": "blue",
             "description": "Sneakers Sky",
-            "sizes": [37, true, 2, 38, true, 3, 39, false, 0, 40, true, 3],
+            "sizes": {
+                "37": 2,
+                "38": 3,
+                "39": 0,
+                "40": 3
+            },
+               
         },
         "green":
         {
@@ -23,7 +29,12 @@ export default {
             "currency": "$",
             "color": "blue",
             "description": "Sneakers Fresh Walk",
-            "sizes": [37, false, 0, 38, true, 1, 39, false, 0, 40, true, 2],
+            "sizes": {
+                "37": 0,
+                "38": 1,
+                "39": 0,
+                "40": 2,
+            },
         },
         "purple":
         {
@@ -33,7 +44,12 @@ export default {
             "currency": "$",
             "color": "blue",
             "description": "Sneakers Sour Fig",
-            "sizes": [37, false, 0, 38, false, 0, 39, false, 0, 40, true, 1],
+            "sizes": {
+                "37": 0,
+                "38": 0,
+                "39": 0,
+                "40": 1,
+            },
         },
         "red":
         {
@@ -43,7 +59,12 @@ export default {
             "currency": "$",
             "color": "blue",
             "description": "Sneakers Bloody Apple",
-            "sizes": [37, true, 10, 38, false, 0, 39, false, 0, 40, true, 2],
+            "sizes": {
+                "37": 10,
+                "38": 0,
+                "39": 0,
+                "40": 2,
+            },
         },
 
 }

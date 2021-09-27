@@ -31,8 +31,6 @@ if(clickOption.includes("option")){
 else if(e.target.getAttribute('id')){
   setMenu(parseInt(e.target.getAttribute('id')))
 }
-console.log(e.target.dataset.id)
-
 }
 
 {/* id is passed as normal prop since i have repetetive placeholder "products" */}

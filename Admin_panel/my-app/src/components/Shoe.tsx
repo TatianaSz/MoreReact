@@ -8,16 +8,25 @@ interface ISHOE{
         currency: string;
         color: string;
         description: string;
-        sizes: (number | boolean)[];}
+        sizes: {
+            "37": number;
+            "38": number;
+            "39": number;
+            "40": number;
+        };
+    }
     id:number;
     menu?:number;
     onClick: (e:any)=>void;
     instock?: boolean;
 }
 
+type Values ={
+    size: string;
+}
 
 function Shoe(props:ISHOE){
-    console.log(props.prop?.image)
+    const {register, watch, handleSubmit} = useForm<Values>();
      if(props.menu==0){
     return (
         <div className="shoe option" data-id={props.id} onClick={props.onClick}>
@@ -28,23 +37,25 @@ function Shoe(props:ISHOE){
     )
     }
     else if(props.menu==props.id){
+      
+   //  console.log(watch())
         return (
             <div className="shoe--add">
                 <div className="" data-id={props.id}><img src={props.prop.image} alt="shoe" /></div>
                 <div>
                 <div className="shoe--desc ">{props.prop.description}</div>  
                 <div className="price ">{props.prop.price} {props.prop.currency}</div>  
-                <form>
+                <form onSubmit={handleSubmit((data)=>{console.log(data)})}>
 
                 <label>Size:
-                <select name="size" id="size">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <select {...register("size")} id="size">
+                <option value="37">{props.prop.sizes["37"]!==0?`37  in stock: ${props.prop.sizes["37"]}`: "37 sold out" }</option>
+                <option value="38">{props.prop.sizes["38"]!==0?`38  in stock: ${props.prop.sizes["38"]}`: "38 sold out" }</option>
+                <option value="39">{props.prop.sizes["39"]!==0?`39  in stock: ${props.prop.sizes["39"]}`: "39 sold out" }</option>
+                <option value="40">{props.prop.sizes["40"]!==0?`40  in stock: ${props.prop.sizes["40"]}`: "40 sold out" }</option>
                 </select> 
                 </label>
-
+                <input type="submit" value="Add to cart"/>
                 </form>
                  </div>
             </div>
