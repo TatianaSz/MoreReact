@@ -24,7 +24,7 @@ export const cartCount =(state:any , action:ACTIONS) =>{
     switch(action.payload.color){
       
       case "blue":
-        return [...state, {"blue": {...StoreData.blue.sizes, [action.payload.size]: action.payload.stock }, "green":{...StoreData.green.sizes}, "red":{...StoreData.red.sizes}, "purple":{...StoreData.purple.sizes}, "dupa": 2}]
+        return [...state, {"blue": {...StoreData.blue.sizes, [action.payload.size]: action.payload.stock }, "green":{...StoreData.green.sizes}, "red":{...StoreData.red.sizes}, "purple":{...StoreData.purple.sizes}, }]
       case "green":
          return [...state,{blue: {...StoreData.blue.sizes }, green:{...StoreData.green.sizes, [action.payload.size]: action.payload.stock}, red:{...StoreData.red.sizes}, purple:{...StoreData.purple.sizes}}]
       case "purple":
