@@ -1,6 +1,24 @@
 import * as actions from "./ActionTypes"
 
 
+interface ISHOE{
+  prop:{image: string;
+      gender: string;
+      price: number;
+      currency: string;
+      color: string;
+      description: string;
+      sizes: {
+          "37": number;
+          "38": number;
+          "39": number;
+          "40": number;
+      };
+  }
+  id:number;
+}
+
+
 interface ACTIONS{
     type:string;
     payload:{
@@ -26,7 +44,7 @@ export const cartCount =(state: Array<{id?:number;
       {
         id: idt++,
         description: action.payload.description,
-        gdgdgd:action.payload.z? +2: "no z",
+    
       }
     ]
   case actions.CART_DELETED:
