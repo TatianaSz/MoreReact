@@ -3,7 +3,7 @@ import { Dispatch } from "redux"
 
 
 
- export function addToCard(desc:string, color:string, size:string, stock:number){
+ export function addToCard(desc?:string, color?:string, size?:string, stock?:number){
 return (dispatch:Dispatch)=>{
     dispatch({
         type:actions.CART_ADDED,

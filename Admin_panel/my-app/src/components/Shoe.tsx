@@ -35,7 +35,7 @@ function Shoe(props:ISHOE){
     const {register,  handleSubmit} = useForm<Values>();
     const dispatch = useDispatch();
     const {addToCard} = bindActionCreators(ActionCreators, dispatch);
-    const state = useSelector((state: State)=>state[state.length-1][props.prop.color]);
+    const state = useSelector((state: State)=>state);
 
      if(props.menu==0){
     return (
@@ -54,7 +54,7 @@ function Shoe(props:ISHOE){
                 <div>
                 <div className="shoe--desc ">{props.prop.description}</div>  
                 <div className="price ">{props.prop.price} {props.prop.currency}</div>  
-                <form onSubmit={handleSubmit((data)=>{let size= data.size as keyof typeof props.prop.sizes;  addToCard(props.prop.description, props.prop.color, data.size, state[size]-1)})}>
+                <form onSubmit={handleSubmit((data)=>{addToCard(props.prop.description, props.prop.color, data.size)})}>
 
                 <label>Size:
                 <select {...register("size")} id="size">

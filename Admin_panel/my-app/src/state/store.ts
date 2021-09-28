@@ -3,6 +3,14 @@ import {cartCount} from "./cartReducer"
 import thunk from "redux-thunk"
 import StoreData from "./../storeData";
 
-let init = [{blue: {...StoreData.blue.sizes}, green:{...StoreData.green.sizes}, red:{...StoreData.red.sizes}, purple:{...StoreData.purple.sizes}}]
+let init = {
+  prod:[
+    {...StoreData.blue},
+    {...StoreData.green},
+    {...StoreData.purple},
+    {...StoreData.red}
+  ],
+  cart:[],
+}
 
 export const store = createStore(cartCount,init, applyMiddleware(thunk))
