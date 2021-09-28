@@ -9,8 +9,8 @@ interface MENU{
 }
 
 function Menu(props:MENU) {
-    const count = useSelector((state: State)=>state.length -1);
-  //  console.log(count)
+  let i=0;
+    const count = useSelector((state: State)=>state.cart.forEach((cartItem:any)=>i+=cartItem.qty));
     return (
         <div className="menu">
       <ul className="menu--list">
@@ -24,7 +24,7 @@ function Menu(props:MENU) {
       </div>
       <div className="menu--cart menu--item">
             <HiOutlineShoppingCart/>
-            <div className="menu--cart__counter">{count}</div>
+            <div className="menu--cart__counter">{i}</div>
       </div>
         </div>
     )

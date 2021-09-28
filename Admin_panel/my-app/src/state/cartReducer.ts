@@ -36,10 +36,10 @@ export const cartCount =(state:any=init , action:ACTIONS) =>{
  let chosenSize = Object.keys(addedProd.sizes).find((siz:any)=>siz ===action.payload.size)! //chosen size
 let qty = addedProd.sizes[chosenSize] // amount of chosen sizes
 let isInCart = state.cart.find((item:any) =>(item.color===action.payload.color && item.sizes ===action.payload.size)) //checking if item in cart has the same color and size
-
+console.log(qty)
     return {...state, 
-      prod: state.prod.map((item:any)=> item.color ===action.payload.color?{...item, sizes:{...item.sizes, [chosenSize]:qty-1}}:item), 
-      cart: isInCart ? state.cart.map((item:any)=>(item.color===action.payload.color && item.sizes ===action.payload.size)?{...item, qty: item.qty +1,}:item) : [...state.cart, {...addedProd, sizes:action.payload.size, qty:1 } ]
+      prod: state.prod.map((item:any)=> item.color ===action.payload.color?{...item, sizes:{...item.sizes, [chosenSize]:(qty-1)>0?(qty-1):0}}:item), 
+      cart: isInCart ? state.cart.map((item:any)=>(item.color===action.payload.color && item.sizes ===action.payload.size &&qty>0)?{...item, qty: item.qty +1,}:item) : [...state.cart, {...addedProd, sizes:action.payload.size, qty:1 } ]
     }
     
   case actions.CART_DELETED:
