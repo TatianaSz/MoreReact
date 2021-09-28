@@ -10,7 +10,7 @@ interface MENU{
 
 function Menu(props:MENU) {
   let i=0;
-    const count = useSelector((state: State)=>state.cart.forEach((cartItem:any)=>i+=cartItem.qty));
+    useSelector((state: State)=>state.cart.forEach((cartItem:any)=>i+=cartItem.qty));
     return (
         <div className="menu">
       <ul className="menu--list">

@@ -37,7 +37,8 @@ function Shoe(props:ISHOE){
     const {addToCard} = bindActionCreators(ActionCreators, dispatch);
     const state = useSelector((state: State)=>state);
 
-     if(props.menu==0){
+     if(props.menu===0){
+
     return (
         <div className="shoe option" data-id={props.id} onClick={props.onClick}>
        <div className="shoe--image option" data-id={props.id}><img src={props.prop.image} alt="shoe" data-id={props.id} className="option"/></div>
@@ -46,7 +47,7 @@ function Shoe(props:ISHOE){
         </div>
     )
     }
-    else if(props.menu==props.id){
+    else if(props.menu===props.id){
        let findItem = state.prod.find((item:any)=>item.color === props.prop.color)
      //  console.log(findItem.sizes["37"])
         return (
