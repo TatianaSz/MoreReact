@@ -1,5 +1,6 @@
 import * as actions from "./ActionTypes"
 import StoreData from "./../storeData";
+import { isTemplateExpression } from "typescript";
 
 
 
@@ -34,7 +35,12 @@ export const cartCount =(state:any=init , action:ACTIONS) =>{
  let addedProd  = state.prod.find((item:any) =>item.color === action.payload.color) //whole chosen product
  let chosenSize = Object.keys(addedProd.sizes).find((siz:any)=>siz ===action.payload.size)! //chosen size
 let qty = addedProd.sizes[chosenSize] // amount of chosen sizes
-    return {...state, prod: state.prod.map((item:any)=> item.color ===action.payload.color?{...item, sizes:{...item.sizes, [chosenSize]:qty-1}}:item)}
+let isInCart = state.cart.find((item:any) =>(item.color===action.payload.color && item.sizes ===action.payload.size))
+console.log(isInCart)
+    return {...state, 
+      prod: state.prod.map((item:any)=> item.color ===action.payload.color?{...item, sizes:{...item.sizes, [chosenSize]:qty-1}}:item), 
+      cart: isInCart ? state.cart.map((item:any)=>(item.color===action.payload.color && item.sizes ===action.payload.size)?{...item, qty: item.qty +1,}:item) : [...state.cart, {...addedProd, sizes:action.payload.size, qty:1 } ]
+    }
     
   case actions.CART_DELETED:
     return state
