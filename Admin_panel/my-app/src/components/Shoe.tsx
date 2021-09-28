@@ -47,7 +47,8 @@ function Shoe(props:ISHOE){
     )
     }
     else if(props.menu==props.id){
-       
+       let findItem = state.prod.find((item:any)=>item.color === props.prop.color)
+     //  console.log(findItem.sizes["37"])
         return (
             <div className="shoe--add">
                 <div className="" data-id={props.id}><img src={props.prop.image} alt="shoe" /></div>
@@ -58,10 +59,10 @@ function Shoe(props:ISHOE){
 
                 <label>Size:
                 <select {...register("size")} id="size">
-                <option disabled={props.prop.sizes["37"]===0} value="37">{props.prop.sizes["37"]!==0?`37  in stock: ${props.prop.sizes["37"]}`: "37 sold out" }</option>
-                <option disabled={props.prop.sizes["38"]===0} value="38">{props.prop.sizes["38"]!==0?`38  in stock: ${props.prop.sizes["38"]}`: "38 sold out" }</option>
-                <option disabled={props.prop.sizes["39"]===0} value="39">{props.prop.sizes["39"]!==0?`39  in stock: ${props.prop.sizes["39"]}`: "39 sold out" }</option>
-                <option disabled={props.prop.sizes["40"]===0} value="40">{props.prop.sizes["40"]!==0?`40  in stock: ${props.prop.sizes["40"]}`: "40 sold out" }</option>
+                <option disabled={findItem.sizes["37"]===0} value="37">{findItem.sizes["37"]!==0?`37  in stock: ${findItem.sizes["37"]}`: "37 sold out" }</option>
+                <option disabled={findItem.sizes["38"]===0} value="38">{findItem.sizes["38"]!==0?`38  in stock: ${findItem.sizes["38"]}`: "38 sold out" }</option>
+                <option disabled={findItem.sizes["39"]===0} value="39">{findItem.sizes["39"]!==0?`39  in stock: ${findItem.sizes["39"]}`: "39 sold out" }</option>
+                <option disabled={findItem.sizes["40"]===0} value="40">{findItem.sizes["40"]!==0?`40  in stock: ${findItem.sizes["40"]}`: "40 sold out" }</option>
                 </select> 
                 </label>
                 <br/>

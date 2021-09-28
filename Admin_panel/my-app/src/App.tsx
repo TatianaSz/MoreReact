@@ -21,7 +21,7 @@ const [menu, setMenu] = useState(0);
  const state = useSelector((state: State)=>state);
   const dispatch = useDispatch();
 const {addToCard, deleteFromCart } = bindActionCreators(ActionCreators, dispatch);
-console.log(state)
+
 
 function pageView(e:any){
 let clickOption = e.target.getAttribute('class')
