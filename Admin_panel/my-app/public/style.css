@@ -59,6 +59,10 @@
   transform: scale(1.1);
 }
 
+html {
+  width: 100vw;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -110,6 +114,26 @@ body {
 }
 
 .menu--item {
+  cursor: pointer;
+}
+
+.cart--holder {
+  position: relative;
+  height: 4rem;
+  align-self: start;
+  display: flex;
+  flex-basis: 33%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.transparent {
+  position: absolute;
+  top: 0;
+  height: 4rem;
+  width: 4rem;
+  background: transparent;
   cursor: pointer;
 }
 

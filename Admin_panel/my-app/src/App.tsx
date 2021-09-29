@@ -31,6 +31,9 @@ if(clickOption.includes("option")){
 else if(e.target.getAttribute('id')){
   setMenu(parseInt(e.target.getAttribute('id')))
 }
+else{
+  console.log("nope")
+}
 }
 
 //id is passed as normal prop since i have repetetive placeholder "products" 
