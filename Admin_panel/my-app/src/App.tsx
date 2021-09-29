@@ -55,7 +55,8 @@ else{
       <Contact />
       <Women />
       <Men />
-      <Cart />
+      <Cart menu={menu}>
+      </Cart>
     </div>
   );
 }
