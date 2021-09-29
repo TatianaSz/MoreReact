@@ -1,10 +1,20 @@
 import React from "react";
 
 
-function CartItem() {
+interface DATA{
+    image: string;
+    gender: string;
+    price: number;
+    currency: string;
+    color: string;
+    description: string;
+    sizes: string
+}
+
+function CartItem(props:DATA) {
     return (
         <div className="cart--item">
-       Hiiiiiii
+       {props.color}
         </div>
     )
   }

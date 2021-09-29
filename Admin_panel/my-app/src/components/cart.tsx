@@ -3,25 +3,33 @@ import {useSelector} from "react-redux";
 import {State} from "./../state/cartReducer";
 import CartItem from "./CartItem"
 
-interface Props {
+interface PROPS {
     menu:number;
     children: any;
   }
+  interface DATA{
+    image: string;
+    gender: string;
+    price: number;
+    currency: string;
+    color: string;
+    description: string;
+    sizes: string
+}
 
-function Cart(props:Props) {
+
+function Cart(props:PROPS) {
     const state = useSelector((state: State)=>state);
     if(props.menu===5){
         return(
             <div>
-   {state.cart.map((cartItem:any)=>{
-        
+   {state.cart.map((cartItem:DATA)=>{
+
             return (
                 <div>
-               <CartItem/>
+               <CartItem {...cartItem}/>
                 </div> 
             )
-          
-            
     })}
         </div>
         )
@@ -30,7 +38,7 @@ function Cart(props:Props) {
         return <div></div>
     }
     else{
-        return (<div></div>)
+        return null
     }
    
 }
