@@ -144,10 +144,58 @@ body {
 }
 
 .shoe--add {
-  margin-top: 2rem;
+  margin-top: 4rem;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+}
+
+.shoe--image__add {
+  width: 65%;
+}
+
+.shoe--image__add div {
+  text-align: center;
+  color: grey;
+}
+
+.shoe--image__add img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.shoe--desc__add {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.price_add {
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.shoe--form {
+  flex-basis: 30%;
+}
+
+.generic--info div {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  color: grey;
+}
+
+.input {
+  margin-top: 1rem;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  background: lightseagreen;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

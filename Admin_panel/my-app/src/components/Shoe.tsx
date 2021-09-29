@@ -52,14 +52,15 @@ function Shoe(props:ISHOE){
      //  console.log(findItem.sizes["37"])
         return (
             <div className="shoe--add">
-                <div className="" data-id={props.id}><img src={props.prop.image} alt="shoe" /></div>
-                <div>
-                <div className="shoe--desc ">{props.prop.description}</div>  
-                <div className="price ">{props.prop.price} {props.prop.currency}</div>  
+                <div className="shoe--image__add" data-id={props.id}><img src={props.prop.image} alt="shoe" /><div>placeholder free image</div></div>
+                <div className="shoe--form">
+                <div className="shoe--desc__add ">{props.prop.description}</div>  
+                <div className="price_add ">{props.prop.price} {props.prop.currency}</div>  
+                <div className="generic--info"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo aut nulla ea eaque hic quo asperiores numquam, deleniti quas optio.</div><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate laboriosam quos nam blanditiis consectetur tempore dolorem, distinctio est accusamus obcaecati excepturi placeat ipsam. Nemo minus explicabo ad nobis suscipit consectetur!</div><div>Lorem ipsum dolor sit amet.</div></div>
                 <form onSubmit={handleSubmit((data)=>{addToCard(props.prop.description, props.prop.color, data.size)})}>
 
-                <label>Size:
-                <select {...register("size")} id="size">
+                <label className="label">Size: <br/>
+                <select {...register("size")} id="size" className="custom-select">
                 <option disabled={findItem.sizes["37"]===0} value="37">{findItem.sizes["37"]!==0?`37  in stock: ${findItem.sizes["37"]}`: "37 sold out" }</option>
                 <option disabled={findItem.sizes["38"]===0} value="38">{findItem.sizes["38"]!==0?`38  in stock: ${findItem.sizes["38"]}`: "38 sold out" }</option>
                 <option disabled={findItem.sizes["39"]===0} value="39">{findItem.sizes["39"]!==0?`39  in stock: ${findItem.sizes["39"]}`: "39 sold out" }</option>
@@ -67,7 +68,7 @@ function Shoe(props:ISHOE){
                 </select> 
                 </label>
                 <br/>
-                <input type="submit" value="Add to cart"/>
+                <input className="input" type="submit" value="Add to cart"/>
                 </form>
                  </div>
             </div>
