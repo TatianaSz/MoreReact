@@ -8,13 +8,17 @@ interface DATA{
     currency: string;
     color: string;
     description: string;
-    sizes: string
+    sizes: string;
+    qty:number;
 }
 
 function CartItem(props:DATA) {
     return (
         <div className="cart--item">
-       {props.color}
+            <div className="shoe--image"><img src={props.image} alt="shoe" className="option"/></div>
+            <div className="shoe--desc">{props.description}</div>  {/* description here */}
+            <div className="price">{props.price} {props.currency}</div> 
+            <div className="qty">{props.qty} </div>
         </div>
     )
   }

@@ -222,4 +222,16 @@ body {
   cursor: pointer;
 }
 
+.cart {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart--item {
+  border: 1px solid black;
+}
+
 /*# sourceMappingURL=style.css.map */

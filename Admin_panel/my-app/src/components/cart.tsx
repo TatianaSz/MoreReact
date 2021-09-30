@@ -6,7 +6,8 @@ import CartItem from "./CartItem"
 interface PROPS {
     menu:number;
     children: any;
-  }
+}
+
   interface DATA{
     image: string;
     gender: string;
@@ -14,26 +15,25 @@ interface PROPS {
     currency: string;
     color: string;
     description: string;
-    sizes: string
+    sizes: string;
+    qty:number;
 }
-
 
 function Cart(props:PROPS) {
     const state = useSelector((state: State)=>state);
     if(props.menu===5){
         return(
-            <div>
-   {state.cart.map((cartItem:DATA)=>{
-
-            return (
-                <div>
-               <CartItem {...cartItem}/>
-                </div> 
-            )
-    })}
-        </div>
+            <div className="cart">
+                {state.cart.map((cartItem:DATA)=>{
+                    return (
+                        <div>
+                        <CartItem {...cartItem}/>
+                        </div> 
+                    )
+                })}
+            </div>
         )
-}
+    }
     else if(props.menu!==5){
         return <div></div>
     }
