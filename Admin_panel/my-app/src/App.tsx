@@ -20,7 +20,7 @@ const [menu, setMenu] = useState(0);
 
 const state = useSelector((state: State)=>state);
 const dispatch = useDispatch();
-const {addToCard, deleteFromCart } = bindActionCreators(ActionCreators, dispatch);
+const {addToCard, decreaseCart, deleteFromCart, increaseCart } = bindActionCreators(ActionCreators, dispatch);
 
 
 function pageView(e:any){

@@ -50,7 +50,9 @@ cart: {
 
 //reducer
 export const cartCount =(state:STATE=init , action:ACTIONS) =>{
+  
   switch(action.type){
+    
    case actions.CART_ADDED:
    let addedProd  = state.prod.find((item:any) =>item.color === action.payload.color) //whole chosen product
    let chosenSize = Object.keys(addedProd!.sizes!).find((siz:any)=>siz ===action.payload.size)! as keyof typeof addedProd //chosen size
@@ -64,7 +66,23 @@ export const cartCount =(state:STATE=init , action:ACTIONS) =>{
     }
     
   case actions.CART_DELETED:
-    return state
+    return {...state, 
+      prod: state.prod.map((item:any)=> item.color ===action.payload.color?{...item, sizes:{...item.sizes, [action.payload.size]:(item.qty+1)}}:item), //needs to go back to initial value
+      cart: state.cart.map((item:any)=>(item.color===action.payload.color && item.sizes ===action.payload.size &&item.qty>0)?
+      {...item, qty: item.qty -1,}:item) //needs to delete this from cart
+    }
+  case actions.CART_INCREASE: //needs fixes, other if statement than decrease
+    return {...state, 
+      prod: state.prod.map((item:any)=> item.color ===action.payload.color?{...item, sizes:{...item.sizes, [action.payload.size]:(item.qty-1)}}:item), 
+      cart: state.cart.map((item:any)=>(item.color===action.payload.color && item.sizes ===action.payload.size &&item.qty>0)?
+      {...item, qty: item.qty +1,}:item)
+    };
+  case actions.CART_DECREASE:
+    return {...state, 
+      prod: state.prod.map((item:any)=> item.color ===action.payload.color?{...item, sizes:{...item.sizes, [action.payload.size]:(item.qty+1)}}:item), 
+      cart: state.cart.map((item:any)=>(item.color===action.payload.color && item.sizes ===action.payload.size &&item.qty>0)?
+      {...item, qty: item.qty -1,}:item)
+    }
     default:
     return state
   }
